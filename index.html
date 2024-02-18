@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Lab0</title>
-    <link rel="stylesheet" href="bulma.min.css" />
+    <title>Lab1</title>
+    <link rel="stylesheet" href="estilos.min.css" />
   </head>
 
   <body>
@@ -17,54 +17,98 @@
     <p>Parrafo</p>
 
     <p>
-      ¿Cuál es la diferencia entre Internet y la World Wide Web? </br>
-Internet: Es una gran red de dispositivos conectados entre sí. Utiliza el protocolo TCP/IP (Protocolo de Control de Transmisión/Protocolo de Internet). </br> Permite la comunicación y cambio de datos entre dispositivos. </br>
-World Wide Web (www): Colección masiva de páginas. Los documentos de la WWW se presentan en forma de páginas web, que pueden contener texto, imágenes, videos, etc.</br>
-Navegamos a través de los celulares o computadoras usando internet para acceder a la web.
-    </p>
+      <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+      Internet: Es una gran red de dispositivos conectados entre sí. Utiliza el protocolo TCP/IP (Protocolo de Control de Transmisión/Protocolo de Internet). </br> Permite la comunicación y cambio de datos entre dispositivos. </br>
+      World Wide Web (www): Colección masiva de páginas. Los documentos de la WWW se presentan en forma de páginas web, que pueden contener texto, imágenes, videos, etc.</br>
+      Navegamos a través de los celulares o computadoras usando internet para acceder a la web.
+    </p></br>
 
     <p>
-      ¿Cuáles son las partes de un URL?</br>
-Protocolo (Esquema): Es la primera parte del URL e indica el protocolo además de si se mostrará en hipertexto o no.</br>
-Subdominio: Se coloca antes del nombre del dominio y se refiere a un área del dominio principal.</br>
-Dominio: Indica el nombre del dominio.</br>
-Ruta: Recorrido de navegación del sitio.</br>
-Parámetros: Información adicional de la ruta. Están separados por "&".</br>
-Carpeta o subcarpeta Ubicación específica de un recurso. Se identifica con el símbolo "#".
+      <h3>¿Cuáles son las partes de un URL?</h3>
+      Protocolo (Esquema): Es la primera parte del URL e indica el protocolo además de si se mostrará en hipertexto o no.</br>
+      Subdominio: Se coloca antes del nombre del dominio y se refiere a un área del dominio principal.</br>
+      Dominio: Indica el nombre del dominio.</br>
+      Ruta: Recorrido de navegación del sitio.</br>
+      Parámetros: Información adicional de la ruta. Están separados por "&".</br>
+      Carpeta o subcarpeta Ubicación específica de un recurso. Se identifica con el símbolo "#".
+    </p></br>
 
       <p>
-        ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</br>
-GET: Solicita representaciones de recursos a los servidores.</br>
-HEAD: Similar a GET pero sólo pide el encabezado.</br>
-POST: Envía datos al servidor, la cual será procesada como formulario HTML.</br>
-PUT: Actualiza datos de un recurso existente</br>
-PATCH: Hace modificaciones parciales a un recurso.</br>
-DELETE: Borra recursos específicos</br>
+        <h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+        GET: Solicita representaciones de recursos a los servidores.</br>
+        HEAD: Similar a GET pero sólo pide el encabezado.</br>
+        POST: Envía datos al servidor, la cual será procesada como formulario HTML.</br>
+        PUT: Actualiza datos de un recurso existente</br>
+        PATCH: Hace modificaciones parciales a un recurso.</br>
+        DELETE: Borra recursos específicos
+      </p></br>
+
+      <p>
+        <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+        Se utiliza HTTP POST, debido a la seguridad que brinda, ya que los datos del formulario son incluidos en el cuerpo del formulario y son enviados al servidor.
+      </p></br>
+
+      <p>
+        <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+	      GET ya que se encarga de solicitar datos del servidor.
+      </p></br>
+
+      <p>
+        <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+	      Que la solicitud se completó y se encontró el servidor, por lo que se devolverá el contenido solicitado.
+      </p></br>
+
+      <p>
+        <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+	      Si, ya que tal vez haya un enlace roto, algún problema de permiso o incluso un problema con la configuración del servidor, lo cual impide al usuario acceder a la página web.
+      </p></br>
+
+      <p>
+        <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+	      Corregir algún error en el código de la conexión con el servidor, configuración del servidor o algún problema con la base de datos, fuera de ello suelen ser problemas del cliente.
+      </p></br>
+
+      <p>
+        <h3> ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)?</h3>
+        Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+      </p></br>
+
+      <p>
+        <h3>Que el atributo ya no es recomendado de usar en el estándar actual de HTML, podría ser eliminado de versiones futuras y por ello se perdería compatibilidad.</h3>
+        “align”: alinea elementos como imágenes y tablas horizontalmente dentro de su contenedor, HTML5 recomienda alinear con CSS.</br>
+        “font”: Define el tamaño, color y tipo de fuente del texto, HTML5 alienta a realizar esto en CSS.</br>
+        “frame”: Especifica si un marco tiene bordes visibles, en HTML5 el uso de marcos se realiza en CSS.</br>
+        “border”: Especifica el ancho del borde alrededor de una imagen, HTML5 recomienda ajustar los bordes con CSS.</br>
+      </p></br>
+
+      <p>
+        <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+	      HTML5 ofrece nuevas características y elementos a comparación de HTML4, esto permite crear páginas web más ricas, accesibles y compatibles con los estándares actuales de la web.
+      </p></br>
+
+      <p>
+        <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+        <h4>Componentes</h4>
+        <.table>: Es el contenedor principal de la tabla.</br>
+        <.tr>: Representa una fila en la tabla.</br>
+        <.th>: Similar al elemento <td>, pero se utiliza para representar encabezados de columna o fila en la tabla.</br>
+        <.thead>: Define el encabezado de una tabla.</br>
+        <.tbody>: Define el cuerpo principal de una tabla.</br>
+        <.tfoot>: Define el pie de una tabla.</br>
+        <h4>Estructura</h4>
+        border: Se utiliza para especificar el ancho del borde de la tabla y de las celdas.</br>
+        cellpadding: Controla el espacio entre el contenido de las celdas y el borde de las celdas.</br>
+        cellspacing: Controla el espacio entre las celdas de la tabla.</br>
+      </p></br>
+
+      <p>
+        <h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+        Enfoque por fases para análisis y diseño, que mejora los ciclos específicos  de actividades del analista y del usuario.
       </p>
 
       <p>
-        ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</br>
-Se utiliza HTTP POST, debido a la seguridad que brinda, ya que los datos del formulario son incluidos en el cuerpo del formulario y son enviados al servidor.
-      </p>
-
-      <p>
-        ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</br>
-	GET ya que se encarga de solicitar datos del servidor.
-      </p>
-
-      <p>
-        Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</br>
-	Que la solicitud se completó y se encontró el servidor, por lo que se devolverá el contenido solicitado.
-      </p>
-
-      <p>
-        ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</br>
-	Si, ya que tal vez haya un enlace roto, algún problema de permiso o incluso un problema con la configuración del servidor, lo cual impide al usuario acceder a la página web.
-      </p>
-
-      <p>
-        ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</br>
-	Corregir algún error en el código de la conexión con el servidor, configuración del servidor o algún problema con la base de datos, fuera de ello suelen ser problemas del cliente.
+        <h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
+        Definición de requerimientos, análisis y diseño de software, implementación y prueba de unidades, integración de pruebas de sistema y por último operación y mantenimiento.
       </p>
 
 </br>
