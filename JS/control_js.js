@@ -1,19 +1,22 @@
 //consola log, info, warn, error, assert
 
-console.log("hola");
+/*console.log("hola");
 console.info("info");
 console.warn("Esta es una advertencia");
 console.error("Esto es un error");
-console.assert(1=="1");
+console.assert(1=="1");*/
+
+const nombre = prompt("Ingresa un número");
+document.write("<h2>Hello World!</h2><p>Have a nice day!</p>");
 
 //declara variables de manera antigua
-var luchadores = 20;
+//var luchadores = 20;
 
 //declara una variable de manera moderna
-let arqueras = 20;
+//let arqueras = 20;
 
 //declarar constante
-const precio = 20;
+/*const precio = 20;
 
 alert("hola");
 const nombre = prompt("¿Cómo te llamas?");
@@ -68,4 +71,4 @@ console.log(objeto);
 
 
 //modificar html
-document.write("hola");
+document.write("hola");*/
