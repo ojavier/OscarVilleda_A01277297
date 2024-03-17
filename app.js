@@ -55,5 +55,4 @@ app.use((request, response, next) => {
         response.sendFile(path.join(_dirname, 'views','404.html'));
     });
 
-app.listen(3000);
 

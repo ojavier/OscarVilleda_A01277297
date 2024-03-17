@@ -1,10 +1,32 @@
 {
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "standard": "^17.1.0"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
-    "foundation-sites": "^6.8.1"
-  }
+    "foundation-sites": "^6.8.1",
+    "picocolors": "^1.0.0"
+  },
+  "name": "oscarvilleda_a01277297",
+  "description": "Aplicacion de laboratorios",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojavier/OscarVilleda_A01277297.git"
+  },
+  "keywords": [
+    "laboratorios"
+  ],
+  "author": "Oscar Javier Villeda Arteaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojavier/OscarVilleda_A01277297/issues"
+  },
+  "homepage": "https://github.com/ojavier/OscarVilleda_A01277297#readme"
 }
