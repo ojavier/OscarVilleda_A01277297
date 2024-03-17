@@ -1,11 +1,8 @@
 //logica del proyecto
 
 const express = require('express');
+const app = express();
 
-const router = express.Router();
+const misRutas = require('./routes/nombre_archivo');
 
-module.exports = router;
-
-router.get('/crear', (request, response, next)=>{
-    
-});
+app.use('/modulo', misRutas);
