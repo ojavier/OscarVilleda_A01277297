@@ -48,11 +48,14 @@ app.use('/clases', rutasClases);*/
 
 app.use('/', rutasClases);
 
-const path = require('path');
-
 app.use((request, response, next) => {
+        console.log('Otro middleware!');
+        response.send('¡Hola mundo!'); //Manda la respuesta
         response.status(404);
-        response.sendFile(path.join(_dirname, 'views','404.html'));
-    });
+        let html = html_header;
+        html += '<h2 class="title">Este clan ya no existe...</h2>';
+        html += html_footer;
+        response.send(html); //Manda la respuesta
+      });
 
 
