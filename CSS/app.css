@@ -1,0 +1,70 @@
+@import 'foundation';
+
+@include foundation-xy-grid-classes(
+  /* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+  */
+);
+
+/* Estilos para la columna de la barra de navegación */
+.navbar-column {
+  background-color: #333; /* Define el color de fondo deseado para la barra de navegación */
+  color: white; /* Define el color del texto */
+  padding: 10px; /* Añade un poco de espacio interno para separar el contenido */
+}
+
+
+/* Estilos para todas las columnas */
+.columns {
+    color: white;
+}
+
+/* Estilos para la columna central */
+.medium-8 {
+    background-color: rgb(168, 163, 163);
+}
+
+/* Estilos para las columnas a los lados */
+.small-2 {
+    background-color: white;
+}
+
+/* Estilos adicionales para personalizar el diseño */
+.custom-grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.text-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+
+/* Estilos para la columna del pie de página */
+.footer-column {
+    background-color: #666; /* Define el color de fondo deseado para el pie de página */
+    color: white; /* Define el color del texto */
+    padding: 20px; /* Añade un poco de espacio interno para separar el contenido */
+  }
+  
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
