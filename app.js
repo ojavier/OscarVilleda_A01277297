@@ -1,61 +1,42 @@
 const express = require('express');
 const app = express();
-
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-
-const bodyParser = require('body-parser');
-
 const path = require('path');
-app.use(express.static(path.join()))
 
-/*
-router.use(bodyParser.urlencoded({extended: false}));
+// Middleware de registro
+app.use((req, res, next) => {
+    console.log('Middleware ejecutado');
+    next();
+});
 
-//Middleware
-router.use((request, response, next) => {
-        console.log('Middleware!');
-        next(); //Le permite a la petición avanzar hacia el siguiente middleware
-    });
-   
-router.get('/', (request, response, nezt) => {
-        //colocar html        
-});    
+// Configuración de las vistas
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.use((request, response, next) => {
-        response.status(404);
-        let html = html_header;
-        html += '<h2 class = "title">No se pudo encontrar la página</h2>';
-        html += html_footer;
-        response.send(html); //Manda la respuesta
-    });
+// Ruta para la página de inicio (index.ejs)
+app.get('/', (req, res) => {
+    res.render('index'); // Renderiza la vista index.ejs para la página de inicio
+});
 
-/*const http = require('http');
+// Ruta para la página de creación (crear.ejs)
+app.get('/crear', (req, res) => {
+    res.render('crear'); // Renderiza la vista crear.ejs para la creación de laboratorios
+});
 
-const server = http.createServer( (request, response) => {
-        console.log(request.url);
-        response.setHeader('Content-Type', 'text/html');
-        response.write("hola");
-        response.end();
+// Montar el enrutador labRoutes para manejar la ruta '/labs'
+const labRoutes = require('./routes/labRoutes');
+app.use('/labs', labRoutes);
 
-        
-});*/
+// Configurar middleware para servir archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
 
-/* rutas
-const rutasClases = require('./routes/clases.routes');
+// La carpeta 'public' contiene los archivos estáticos como CSS, JS, imágenes, etc.
 
-app.use('/clases', rutasClases);*/
+// Manejo de solicitudes no encontradas
+app.use((req, res, next) => {
+    res.status(404).send('Página no encontrada'); // Envía un mensaje de error 404
+});
 
-app.use('/', rutasClases);
+module.exports = app;
 
-app.use((request, response, next) => {
-        console.log('Otro middleware!');
-        response.send('¡Hola mundo!'); //Manda la respuesta
-        response.status(404);
-        let html = html_header;
-        html += '<h2 class="title">Este clan ya no existe...</h2>';
-        html += html_footer;
-        response.send(html); //Manda la respuesta
-      });
-
-
+app.listen(3000);
+console.log('Server on port 3000');
