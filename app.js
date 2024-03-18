@@ -22,6 +22,16 @@ app.get('/crear', (req, res) => {
     res.render('crear'); // Renderiza la vista crear.ejs para la creación de laboratorios
 });
 
+// Ruta para la página de creación (iniciar-sesion.ejs)
+app.get('/iniciar-sesion', (req, res) => {
+    res.render('iniciar-sesion'); // Renderiza la vista iniciar-sesion.ejs para la creación de laboratorios
+});
+
+// Ruta para la página de creación (registrarse.ejs)
+app.get('/registrarse', (req, res) => {
+    res.render('registrarse'); // Renderiza la vista registrarse.ejs para la creación de laboratorios
+});
+
 // Montar el enrutador labRoutes para manejar la ruta '/labs'
 const labRoutes = require('./routes/labRoutes');
 app.use('/labs', labRoutes);
