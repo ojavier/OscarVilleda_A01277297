@@ -31,22 +31,22 @@
   <div class="custom-grid">
     <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la izquierda -->
     <div class="columns small-10 medium-8 large-6 text-container"> <!-- Columna central para el texto -->
-      <div class="center-content"> <!-- Añadimos la clase center-content para centrar el contenido -->
-        <h1></h1>
-        <h3>Creación de nuevos Labs</h3>
-        <!-- Espacio para ingresar el título y el contenido del laboratorio -->
-        <div style="margin-top: 20px;">
-          <!-- Espacio para ingresar el título del laboratorio -->
-          <input type="text" placeholder="Título del laboratorio" style="margin-bottom: 10px; width: 100%;">
-          <!-- Espacio para ingresar el contenido del laboratorio -->
-          <textarea placeholder="Contenido del laboratorio" style="width: 100%; height: 200px;"></textarea>
-          <!-- Botón para iniciar sesión -->
-        <button style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; margin-bottom: 10px;">Crear laboratorio</button>
+        <div class="center-content"> <!-- Añadimos la clase center-content para centrar el contenido -->
+            <h1></h1>
+            <h3>Creación de nuevos Labs</h3>
+            <!-- Formulario para ingresar el título y el contenido del laboratorio -->
+            <form action="/crear" method="POST">
+                <!-- Espacio para ingresar el título del laboratorio -->
+                <input type="text" name="titulo" placeholder="Título del laboratorio" style="margin-bottom: 10px; width: 100%;">
+                <!-- Espacio para ingresar el contenido del laboratorio -->
+                <textarea name="contenido" placeholder="Contenido del laboratorio" style="width: 100%; height: 200px;"></textarea>
+                <!-- Botón para crear el laboratorio -->
+                <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; margin-bottom: 10px;">Crear laboratorio</button>
+            </form>
         </div>
-      </div>
     </div>
     <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la derecha -->
-  </div>
+</div>
   
 
 <!-- Script poe -->
@@ -54,6 +54,14 @@
 
 <!-- Script poe -->
 <script src="/JS/backend.js"></script>
+
+<form action="/labs/crear" method="POST">
+  <!-- Aquí van los campos del formulario -->
+  <input type="text" name="titulo" placeholder="Título del laboratorio">
+  <textarea name="contenido" placeholder="Contenido del laboratorio"></textarea>
+  <button type="submit">Crear laboratorio</button>
+</form>
+
 
 </body>
 </html>

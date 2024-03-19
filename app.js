@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const labRoutes = require('./routes/labRoutes');
 
 // Middleware de registro
 app.use((req, res, next) => {
     console.log('Middleware ejecutado');
     next();
 });
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configuración de las vistas
 app.set('view engine', 'ejs');
@@ -17,24 +21,8 @@ app.get('/', (req, res) => {
     res.render('index'); // Renderiza la vista index.ejs para la página de inicio
 });
 
-// Ruta para la página de creación (crear.ejs)
-app.get('/crear', (req, res) => {
-    res.render('crear'); // Renderiza la vista crear.ejs para la creación de laboratorios
-});
-
-// Ruta para la página de creación (iniciar-sesion.ejs)
-app.get('/iniciar-sesion', (req, res) => {
-    res.render('iniciar-sesion'); // Renderiza la vista iniciar-sesion.ejs para la creación de laboratorios
-});
-
-// Ruta para la página de creación (registrarse.ejs)
-app.get('/registrarse', (req, res) => {
-    res.render('registrarse'); // Renderiza la vista registrarse.ejs para la creación de laboratorios
-});
-
-// Montar el enrutador labRoutes para manejar la ruta '/labs'
-const labRoutes = require('./routes/labRoutes');
-app.use('/labs', labRoutes);
+// Montar el enrutador labRoutes directamente
+app.use(labRoutes);
 
 // Configurar middleware para servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
