@@ -1,6 +1,5 @@
-// crear.controller.js
-
 const Laboratorio = require('../Models/lab.model');
+const cookieParser = require('cookie-parser');
 
 // Controlador para procesar la creación de un nuevo laboratorio
 exports.post_crear = (req, res, next) => {
@@ -14,10 +13,10 @@ exports.post_crear = (req, res, next) => {
     // Guardar el nuevo laboratorio
     nuevoLaboratorio.save();
 
-    // Recuperar todos los laboratorios después de guardar el nuevo laboratorio
-    const laboratorios = Laboratorio.fetchAll();
+    // Configurar una cookie con el título del nuevo laboratorio
+    res.cookie('nuevoLaboratorioTitulo', nuevoLaboratorio.titulo);
 
-    // Renderizar index.ejs y pasar los laboratorios como datos
-    console.log("Creación de laboratorio exitosa. Renderizando index con los laboratorios...");
-    res.render('index', { laboratorios });
+    // Redirigir al usuario a la ruta raíz
+    console.log("Creación de laboratorio exitosa. Redirigiendo a la ruta raíz...");
+    res.redirect('/');
 };
