@@ -1,10 +1,10 @@
-const mysql = requiere('mysql2');
+const mysql = require('mysql2');
 
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'database_name',
-    password: 'el_password_de_tu_usuario_de_la_bd'
+    host: 'mysql-oscarv7.alwaysdata.net',
+    user: 'oscarv7_oscar',
+    database: 'oscarv7_lab',
+    password: 'swrdS0ul13.'
 });
 
 module.exports = pool.promise();

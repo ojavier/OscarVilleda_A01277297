@@ -1,23 +1,29 @@
-// iniciar.controller.js
+const db = require('../util/database');
 
-// Objeto para almacenar temporalmente los usuarios registrados
-const users = {
-    "usuario1": "password1",
-    "usuario2": "password2"
-};
+module.exports = class Usuario {
 
-document.getElementById('loginBtn').addEventListener('click', function() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-
-    // Verificar si las credenciales son válidas
-    if (users[username] && users[username] === password) {
-        console.log("Inicio de sesión exitoso para el usuario:", username);
-
-        // Redirigir al usuario a la página de inicio
-        window.location.href = '/';
-    } else {
-        console.log("Nombre de usuario o contraseña incorrectos");
-        // Aquí podrías mostrar un mensaje de error al usuario en tu interfaz de usuario
+    // Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
+    constructor(nombres, apellidos, correo, password) {
+        this.correo = correo;
+        this.password = password;
     }
-});
+
+    // Método estático para obtener todos los usuarios
+    static fetchAll() {
+        return db.execute('SELECT * FROM users');
+    }
+
+    // Método estático para obtener un usuario por su correo electrónico
+    static fetchOne(correo) {
+        return db.execute('SELECT * FROM users WHERE correo = ?', [correo])
+            .then(([rows, fields]) => {
+                console.log(rows); 
+                return rows;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    // No se proporciona la lógica para obtener privilegios y roles ya que no están definidos en la tabla de usuarios
+};

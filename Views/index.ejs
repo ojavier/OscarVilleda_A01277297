@@ -1,63 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Lab1</title>
-  <link rel="stylesheet" href="/CSS/foundation.min.css" />
-  <link rel="stylesheet" href="/CSS/app.css" />
-</head>
-<body>
-
-  <div class="container">
-    <div class="row align-middle">
-      <div class="columns small-12 medium-6">
-        <div class="navbar-column flex-container justify-between align-middle">
-          <h1 style="display: inline; margin-right: 20px;">Laboratorios</h1>
-          <!-- Título para crear nuevos laboratorios -->
-          <h2 style="display: inline;"><a href="/crear">Crear</a></h2>
-          <!-- Botón para iniciar sesión -->
-          <h3 style="display: inline; margin-left: auto;"><a href="/iniciar-sesion">Iniciar sesión</a></h3>
-          <div style="float: right;">
-            <img src="data:image/png;base64,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" alt="Ícono de perfil" style="height: 50px;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<%- include('partials/head.ejs', {
+}) %>
                 
 <!-- Contenedor de botones -->
 <div class="container">
-  <div class="row align-middle">
-      <div class="columns small-12 medium-6">
-          <div class="main-buttons">
-              <!-- Mostrar el nuevo laboratorio -->
-              <% if (typeof nuevoLaboratorioTitulo !== 'undefined') { %>
-                  <button><%= nuevoLaboratorioTitulo %></button>
-              <% } %>
-          </div>
-      </div>
-  </div>
-</div>   
-
-<div class="custom-grid">
-  <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la izquierda -->
-  <div class="columns small-10 medium-8 large-6 text-container"> <!-- Columna central para el texto -->
-      <div class="center-content"> <!-- Añadimos la clase center-content para centrar el contenido -->
-          <h1></h1>
-          <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
-          <p>
-              Aquí se incluirán todos los laboratorios realizados.
-        </p></br>
-      </div>
+    <div class="row align-middle">
+        <div class="columns small-12 medium-6">
+            <div class="main-buttons">
+                <!-- Mostrar el nuevo laboratorio -->
+                <% laboratorios.forEach((lab) => { %>
+                    <button><%= lab.titulo %></button>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+  </div>  
+  
+  <!-- Pagina principal donde se muestra el contenido del laboratorio -->
+  <div class="custom-grid">
+    <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la izquierda -->
+    <div class="columns small-10 medium-8 large-6 text-container"> <!-- Columna central para el texto -->
+        <div class="center-content"> <!-- Añadimos la clase center-content para centrar el contenido -->
+            <h1>Laboratorios</h1>
+            <!-- Mostrar todos los datos de los laboratorios -->
+            <ul>
+                <% laboratorios.forEach((lab) => { %>
+                    <li>
+                        <strong>Título:</strong> <%= lab.titulo %><br>
+                        <strong>Contenido:</strong> <%= lab.contenido %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
     </div>
     <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la derecha -->
   </div>
-
-<!-- Script poe -->
-<script src="/JS/poe.js"></script>
-
-<!-- Script poe -->
-<script src="/backend.js"></script>
-
-</body>
-</html>
+  
+  <!-- Incluye labButtons.js -->
+  <script src="/JS/labButtons.js"></script>
+  

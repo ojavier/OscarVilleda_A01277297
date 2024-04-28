@@ -1,20 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const buttonContainer = document.querySelector('.main-buttons'); // Selecciona el contenedor de botones
-
-    // Objeto con los laboratorios
-    const labContents = {
-        'Lab1': `
-            <h1>Lab1</h1>
-            <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
-            
-        `,
-        
-        'Lab6': `
-            <h1>Lab6</h1>
-            <h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
-        `,
-        // Puedes agregar más laboratorios aquí
-    };
+    
+    // Obtener los datos de los laboratorios del atributo de datos
+    const labContents = JSON.parse(document.getElementById('laboratorios').getAttribute('data-lab-contents'));
 
     // Agrega botones para cada laboratorio al contenedor
     Object.keys(labContents).forEach((labTitle) => {

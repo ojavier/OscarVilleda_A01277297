@@ -10,6 +10,7 @@
     "express": "^4.18.2",
     "express-session": "^1.18.0",
     "foundation-sites": "^6.8.1",
+    "mysql2": "^3.9.7",
     "picocolors": "^1.0.0"
   },
   "name": "oscarvilleda_a01277297",
