@@ -26,4 +26,25 @@ module.exports = class Usuario {
         return this.fetchOneByEmail(email);
     }
 
+    static getPrivilegios(Email) {
+        return db.execute(`
+            SELECT p.NombrePrivilegio
+            FROM usuario u
+            JOIN roldeusuarios ru ON u.Email = ru.Email
+            JOIN permisosrol pr ON ru.IdRol = pr.IdRol
+            JOIN permisos p ON pr.IdPermisos = p.IdPermisos
+            WHERE u.Email = ?
+        `, [Email]);
+    }
+    
+    static getUserRole(Email) {
+        return db.execute(`
+            SELECT r.Nombre
+            FROM usuario u
+            JOIN roldeusuarios ru ON u.Email = ru.Email
+            JOIN rol r ON ru.IdRol = r.IdRol
+            WHERE u.Email = ?
+        `, [Email]);
+    }    
+
 };

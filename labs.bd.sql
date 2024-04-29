@@ -29,3 +29,17 @@ CREATE TABLE `permisos` (
   `Tipo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IdPermisos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+DROP TABLE IF EXISTS `permisosrol`;
+CREATE TABLE `permisosrol` (
+  `IdPermisos` int NOT NULL,
+  `IdRol` int NOT NULL,
+  PRIMARY KEY (`IdPermisos`,`IdRol`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+DROP TABLE IF EXISTS `roldeusuarios`;
+CREATE TABLE `roldeusuarios` (
+  `IdRol` int NOT NULL,
+  `Email` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  PRIMARY KEY (`IdRol`,`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;

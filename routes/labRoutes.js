@@ -14,7 +14,7 @@ router.get('/crear', (req, res) => {
 });
 
 // Ruta para manejar la creación de laboratorios (POST)
-router.post('/crear', crearController.post_crear); // Utilizar la función post_crear del controlador
+router.post('/crear', isAuth, crearController.post_crear); // Utilizar la función post_crear del controlador
 
 // Ruta para la página de inicio de sesión
 router.get('/iniciar-sesion', (req, res) => {
