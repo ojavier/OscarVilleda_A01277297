@@ -2,28 +2,28 @@ const db = require('../util/database');
 
 module.exports = class Usuario {
 
-    // Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(nombres, apellidos, correo, password) {
         this.correo = correo;
         this.password = password;
     }
 
-    // Método estático para obtener todos los usuarios
     static fetchAll() {
         return db.execute('SELECT * FROM users');
     }
 
-    // Método estático para obtener un usuario por su correo electrónico
-    static fetchOne(correo) {
-        return db.execute('SELECT * FROM users WHERE correo = ?', [correo])
+    static fetchOneByEmail(email) {
+        return db.execute('SELECT * FROM users WHERE correo = ?', [email])
             .then(([rows, fields]) => {
-                console.log(rows); 
                 return rows;
             })
             .catch((error) => {
                 console.log(error);
+                throw error; // Re-lanza el error para manejarlo en el controlador
             });
     }
 
-    // No se proporciona la lógica para obtener privilegios y roles ya que no están definidos en la tabla de usuarios
+    static fetchByEmail(email) {
+        return this.fetchOneByEmail(email);
+    }
+
 };

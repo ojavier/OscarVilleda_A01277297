@@ -2,31 +2,26 @@
 }) %>  
 
   <div class="custom-grid">
-    <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la izquierda -->
-    <div class="columns small-10 medium-8 large-6 text-container"> <!-- Columna central para el texto -->
-      <div class="center-content"> <!-- Añadimos la clase center-content para centrar el contenido -->
-        <h1>Iniciar Sesión</h1>
-        <!-- Espacio para ingresar el nombre de usuario -->
-        <div style="margin-top: 20px;">
-          <input type="text" placeholder="Nombre de usuario" style="margin-bottom: 10px; width: 100%; padding: 8px;">
-        </div>
-        <!-- Espacio para ingresar la contraseña -->
-        <div>
-          <input type="password" placeholder="Contraseña" style="margin-bottom: 10px; width: 100%; padding: 8px;">
-        </div>
-        <!-- Botón para iniciar sesión -->
-        <a href="/Iniciar Sesión"><button style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; margin-bottom: 10px;">Iniciar Sesión</button></a>
+    <div class="columns small-1 medium-2 large-3"></div>
+    <div class="columns small-10 medium-8 large-6 text-container">
+      <div class="center-content">
+        <h1>Iniciar Sesión</h1>      
+        <form action="/iniciar-sesion" method="POST">
+          <!-- Espacio para ingresar el correo electrónico -->
+          <div style="margin-top: 20px;">
+              <input type="text" placeholder="Correo electrónico" name="correo" style="margin-bottom: 10px; width: 100%; padding: 8px;">
+          </div>
+          <!-- Espacio para ingresar la contraseña -->
+          <div>
+              <input type="password" placeholder="Contraseña" name="password" style="margin-bottom: 10px; width: 100%; padding: 8px;">
+          </div>
+          <!-- Botón para iniciar sesión -->
+          <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; margin-bottom: 10px;">Iniciar Sesión</button>
+        </form>
         <!-- Botón para registrarse -->
         <a href="/registrarse"><button style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px;">Registrarse</button></a>
       </div>
     </div>
-    <div class="columns small-1 medium-2 large-3"></div> <!-- Columna en blanco a la derecha -->
+    <div class="columns small-1 medium-2 large-3"></div>
   </div>
-
-
-  <!-- Script poe -->
-  <script src="/JS/poe.js"></script>
-
-  <!-- Script poe -->
-  <script src="/JS/backend.js"></script>
 

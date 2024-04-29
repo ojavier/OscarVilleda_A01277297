@@ -1,7 +1,12 @@
 // labRoutes.js
 const express = require('express');
 const router = express.Router();
+const mainController = require('../controllers/main.controller'); // Importar el controlador
+const iniciarController = require('../controllers/iniciar.controller'); // Importar el controlador
 const crearController = require('../controllers/crear.controller'); // Importar el controlador
+
+// Ruta para la página principal
+router.get('/', mainController.get_home); // Utilizar la función get_home del controlador principal
 
 // Ruta para la página de creación de laboratorios
 router.get('/crear', (req, res) => {
@@ -15,6 +20,9 @@ router.post('/crear', crearController.post_crear); // Utilizar la función post_
 router.get('/iniciar-sesion', (req, res) => {
     res.render('iniciar-sesion'); // Renderiza la vista iniciar-sesion.ejs para la creación de laboratorios
 });
+
+// Ruta para manejar el inicio de sesión (POST)
+router.post('/iniciar-sesion', iniciarController.post_login);
 
 // Ruta para la página de registro
 router.get('/registrarse', (req, res) => {

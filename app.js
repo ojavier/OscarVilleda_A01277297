@@ -7,6 +7,10 @@ const Laboratorio = require('./Models/lab.model');
 // Creación de la aplicación Express
 const app = express();
 
+// Configuración de las vistas
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 // Middleware de registro
 app.use((req, res, next) => {
     console.log('Middleware ejecutado');
@@ -24,9 +28,11 @@ app.use(session({
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Configuración de las vistas
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// Middleware para imprimir datos de solicitud entrantes
+app.use((req, res, next) => {
+    console.log('Datos de la solicitud entrante:', req.method, req.url, req.body);
+    next();
+});
 
 // Ruta para la página de inicio (index.ejs)
 app.get('/', async (req, res) => {
