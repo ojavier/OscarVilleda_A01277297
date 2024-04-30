@@ -3,6 +3,7 @@ const path = require('path');
 const labRoutes = require('./routes/labRoutes');
 const session = require('express-session');
 const Laboratorio = require('./Models/lab.model');
+const Usuario = require('./Models/user.model');
 
 // Creación de la aplicación Express
 const app = express();
@@ -54,9 +55,22 @@ app.use('/', labRoutes); // Usa las rutas de laboratorio en la ruta raíz
 // Configuración de middleware para servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Agrega esta línea para servir archivos estáticos
+app.use('/Models', express.static(path.join(__dirname, 'Models')));
+
 // Manejo de solicitudes no encontradas
 app.use((req, res, next) => {
     res.status(404).send('Página no encontrada'); // Envía un mensaje de error 404
+});
+
+// Ruta para devolver datos de usuario
+app.get('/reporteRender', (req, res) => {
+    const userData = [
+        { id: 1, name: 'Usuario 1', age: 30 },
+        { id: 2, name: 'Usuario 2', age: 25 },
+        { id: 3, name: 'Usuario 3', age: 40 }
+    ];
+    res.json(userData);
 });
 
 

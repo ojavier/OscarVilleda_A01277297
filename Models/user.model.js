@@ -1,4 +1,7 @@
 const db = require('../util/database');
+const app = require('../app');
+
+
 
 module.exports = class Usuario {
 
@@ -8,11 +11,11 @@ module.exports = class Usuario {
     }
 
     static fetchAll() {
-        return db.execute('SELECT * FROM users');
+        return db.execute('SELECT *, YEAR(CURRENT_DATE()) - YEAR(fecha_nacimiento) - (DATE_FORMAT(CURRENT_DATE(),"%m%d") < DATE_FORMAT(fecha_nacimiento,"%m%d")) AS edad FROM users');
     }
 
     static fetchOneByEmail(email) {
-        return db.execute('SELECT * FROM users WHERE correo = ?', [email])
+        return db.execute('SELECT *, YEAR(CURRENT_DATE()) - YEAR(fecha_nacimiento) - (DATE_FORMAT(CURRENT_DATE(),"%m%d") < DATE_FORMAT(fecha_nacimiento,"%m%d")) AS edad FROM users WHERE correo = ?', [email])
             .then(([rows, fields]) => {
                 return rows;
             })

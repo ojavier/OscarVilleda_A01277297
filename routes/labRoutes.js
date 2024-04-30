@@ -4,6 +4,9 @@ const router = express.Router();
 const mainController = require('../controllers/main.controller'); // Importar el controlador
 const iniciarController = require('../controllers/iniciar.controller'); // Importar el controlador
 const crearController = require('../controllers/crear.controller'); // Importar el controlador
+const isAuth = require('../util/is-auth');
+const Usuario = require('../Models/user.model');
+
 
 // Ruta para la página principal
 router.get('/', mainController.get_home); // Utilizar la función get_home del controlador principal
@@ -35,6 +38,18 @@ router.post('/registrarse', (req, res) => {
     // Por ejemplo, validar los datos del formulario y guardar el usuario en la base de datos
     res.send('Registro exitoso'); // Enviar respuesta al cliente después del registro
 });
+
+// Ruta para la página de reportes
+router.get('/reporte', async (req, res) => {
+    const result = await Usuario.fetchAll();
+    res.send({result:result});
+});
+router.get('/reporteRender', async (req, res) => {
+    res.render('reporte'); // Renderiza la vista crear.ejs para la creación de laboratorios
+});
+
+// Ruta para visualizar reportes
+router.post('/reporte'); 
 
 // Otras rutas relacionadas con la gestión de laboratorios pueden ir aquí
 
